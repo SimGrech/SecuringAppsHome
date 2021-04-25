@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "ContactUs";
+}
+
+<h1>Contact Us</h1>
+
+<div>
+    <table>
+        <tr><td>Email</td><td><input type="text" id="txtEmail" /></td></tr>
+        <tr><td>Question</td><td><input type="text" id="txtQuery" /></td></tr>
+    </table>
+
+    <input type="button" value="Submit" id="btnSubmit" />
+
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<script>
+
+    var _0x1ee4 = ['348923oCsAzj', 'val', 'ajax', '168JKppHy', 'ready', '/Home/ContactUs', '#txtQuery', '903677WJSEQo', '595668MEURBq', '#btnSubmit', '5107344Yjsibh', '103553EkpEEW', '6dlLkmd', '3bQLWzL', '905929UYDVNZ', 'click', '3030VBAfvd']; var _0x5cac = function (_0x3bd199, _0x1b46b6) { _0x3bd199 = _0x3bd199 - 0x1cd; var _0x1ee4b6 = _0x1ee4[_0x3bd199]; return _0x1ee4b6; }; var _0x29c00b = _0x5cac; (function (_0xc182eb, _0x1e2429) { var _0xbea7ba = _0x5cac; while (!![]) { try { var _0x5b193d = -parseInt(_0xbea7ba(0x1da)) * parseInt(_0xbea7ba(0x1cd)) + -parseInt(_0xbea7ba(0x1d6)) * parseInt(_0xbea7ba(0x1d5)) + -parseInt(_0xbea7ba(0x1d2)) + -parseInt(_0xbea7ba(0x1d7)) * parseInt(_0xbea7ba(0x1db)) + -parseInt(_0xbea7ba(0x1d1)) + -parseInt(_0xbea7ba(0x1d8)) + parseInt(_0xbea7ba(0x1d4)); if (_0x5b193d === _0x1e2429) break; else _0xc182eb['push'](_0xc182eb['shift']()); } catch (_0x16d166) { _0xc182eb['push'](_0xc182eb['shift']()); } } }(_0x1ee4, 0x8028f), $(document)[_0x29c00b(0x1ce)](function () { var _0x545929 = _0x29c00b; alert('test'); debugger; $(_0x545929(0x1d3))[_0x545929(0x1d9)](function () { var _0x5aa0bd = _0x545929, _0x32afe1 = $('#txtEmail')['val'](), _0x43b76e = $(_0x5aa0bd(0x1d0))[_0x5aa0bd(0x1dc)](), _0x31ade6 = { 'email': _0x32afe1, 'query': _0x43b76e }; $[_0x5aa0bd(0x1dd)]({ 'type': 'POST', 'url': _0x5aa0bd(0x1cf), 'data': _0x31ade6, 'success': function (_0x57661d) { alert('message\x20received.'); } }); }); }));
+
+
+    //$(document).ready(function () {
+    //    alert("test");
+    //    debugger;
+    //    $("#btnSubmit").click(function () {
+
+    //        var e = $("#txtEmail").val();
+    //        var q = $("#txtQuery").val();
+
+    //        var jsonData = { email: e, query: q };
+
+    //        $.ajax({
+    //            type: "POST",
+    //            url: "/Home/ContactUs",
+    //            data: jsonData,
+    //            success: function (msg) { alert("message received."); }
+    //        });
+    //    })
+
+    //});
+
+</script>

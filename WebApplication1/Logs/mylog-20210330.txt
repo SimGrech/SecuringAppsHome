@@ -1,0 +1,15 @@
+2021-03-30T09:13:42.1730894+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-03-30T09:13:42.1805071+02:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-03-30T09:13:42.1837608+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-03-30T09:13:42.1860899+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-03-30T09:13:42.1885359+02:00  [INF] Content root path: "C:\Users\Ryan\Source\Repos\SecuringAppsSWD62a\WebApplication1" (b5d60022)
+2021-03-30T09:13:44.5199677+02:00 0HM7J9DCR8V3C:00000001 [INF] Home Index accessed (f306b1a0)
+2021-03-30T09:21:36.5982944+02:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-03-30T09:21:36.6053027+02:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-03-30T09:21:36.6071531+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-03-30T09:21:36.6086836+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-03-30T09:21:36.6103269+02:00  [INF] Content root path: "C:\Users\Ryan\Source\Repos\SecuringAppsSWD62a\WebApplication1" (b5d60022)
+2021-03-30T09:21:38.6311334+02:00 0HM7J9HQ8FDLE:00000001 [INF] Home Index accessed (f306b1a0)
+2021-03-30T09:22:05.1817117+02:00 0HM7J9HQ8FDLE:00000005 [ERR] Error happend while saving file (e85c7b4d)
+System.Exception: Exception of type 'System.Exception' was thrown.
+   at WebApplication1.Controllers.ProductsController.Create(IFormFile file, ProductViewModel data) in C:\Users\Ryan\Source\Repos\SecuringAppsSWD62a\WebApplication1\Controllers\ProductsController.cs:line 100
