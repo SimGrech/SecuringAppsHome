@@ -9,7 +9,7 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    [Authorize(Roles ="ADMIN,TEACHER")]
+    [Authorize(Roles ="Admin, Teacher")]
     public class RolesManagementController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;

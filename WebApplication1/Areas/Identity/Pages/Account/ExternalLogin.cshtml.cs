@@ -88,7 +88,8 @@ namespace WebApplication1.Areas.Identity.Pages.Account
             //1. the email already exists
             string email = info.Principal.Claims.ToList()[4].Value;
             var currentlylogginguser = await _userManager.FindByNameAsync(email);
-            if(currentlylogginguser == null) {//return to login page
+            if(currentlylogginguser == null) {
+                //return to login page
             }
             else
             {//the email already exists
@@ -97,7 +98,7 @@ namespace WebApplication1.Areas.Identity.Pages.Account
                 //2. the email has a Teacher role associated with it
                 //if any of the two conditions above fail >>> redirect to login page
 
-                bool confirmation = await _userManager.IsInRoleAsync(currentlylogginguser, "Teacher");
+                bool confirmation = await _userManager.IsInRoleAsync(currentlylogginguser, "TEACHER");
                 if (!confirmation)
                 {
                     ErrorMessage = "You are not a Teacher, please use the normal login form";
@@ -123,13 +124,16 @@ namespace WebApplication1.Areas.Identity.Pages.Account
                 // If the user does not have an account, then ask the user to create an account.
                 ReturnUrl = returnUrl;
                 ProviderDisplayName = info.ProviderDisplayName;
+                Input = null;
                 if (info.Principal.HasClaim(c => c.Type == ClaimTypes.Email))
                 {
                     Input = new InputModel
                     {
                         Email = info.Principal.FindFirstValue(ClaimTypes.Email)
                     };
+
                 }
+
                 return Page();
             }
         }
@@ -152,6 +156,23 @@ namespace WebApplication1.Areas.Identity.Pages.Account
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
+                    //Automatically Assigns Teacher role to new user
+                    if (user != null)
+                    {
+                        var returnedUser = await _userManager.FindByNameAsync(user.Email);
+
+                        if (returnedUser != null)
+                        {
+                            await _userManager.AddToRoleAsync(returnedUser, "Teacher");
+
+                            TempData["message"] = "Teacher Role Allocated";
+                        }
+                        else
+                        {
+                            TempData["error"] = "An error has occurred";
+                        }
+                    }
+
                     result = await _userManager.AddLoginAsync(user, info);
                     if (result.Succeeded)
                     {
