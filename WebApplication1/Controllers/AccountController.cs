@@ -15,6 +15,7 @@ namespace WebApplication1.Controllers
         public AccountController(UserManager<ApplicationUser> userManager)
         { _userManager = userManager; }
         
+
         /*
         public async Task<IActionResult> GenerateAccount(StudentCreationModel model)
         {

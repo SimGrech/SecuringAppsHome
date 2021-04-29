@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ShoppingCart.Data.Migrations
 {
-    public partial class ProductsInitialSchema : Migration
+    public partial class initialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -43,7 +43,8 @@ namespace ShoppingCart.Data.Migrations
                     Price = table.Column<double>(nullable: false),
                     Stock = table.Column<int>(nullable: false),
                     CategoryId = table.Column<int>(nullable: false),
-                    ImageUrl = table.Column<string>(nullable: true)
+                    ImageUrl = table.Column<string>(nullable: true),
+                    Owner = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

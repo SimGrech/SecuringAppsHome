@@ -14,5 +14,13 @@ namespace WebApplication1.Models
         public string Address { get; set; }
 
         public DateTime LastLoggedIn { get; set; }
+
+        public string Teacher { get; set; }
+
+        public string PublicKey { get; set; }
+
+        public string PrivateKey { get; set; }
+
+        //Might need to add the user's private key?
     }
 }

@@ -13,6 +13,8 @@ namespace ShoppingCart.Application.AutoMapper
         {
             CreateMap<ProductViewModel, Product>().ForMember(x=>x.Category, opt => opt.Ignore());
             CreateMap<CategoryViewModel, Category>();
+            CreateMap<AssignmentTaskViewModel, AssignmentTask>();
+            CreateMap<SubmissionViewModel, Submission>();
         }
     }
 }

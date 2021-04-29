@@ -1,22 +1,22 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ShoppingCart.Data.Migrations
+namespace WebApplication1.Data.Migrations
 {
-    public partial class AddingOwnerPropertyToProduct : Migration
+    public partial class teacherAdded : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
-                name: "Owner",
-                table: "Products",
+                name: "Teacher",
+                table: "AspNetUsers",
                 nullable: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "Owner",
-                table: "Products");
+                name: "Teacher",
+                table: "AspNetUsers");
         }
     }
 }

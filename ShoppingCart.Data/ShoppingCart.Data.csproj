@@ -5,6 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20210427183750_modelsAdded.cs" />
+    <Compile Remove="Migrations\20210427183750_modelsAdded.Designer.cs" />
+    <Compile Remove="Migrations\20210427183931_newtaskmodels.cs" />
+    <Compile Remove="Migrations\20210427183931_newtaskmodels.Designer.cs" />
+    <Compile Remove="Migrations\20210427184754_testMigration.cs" />
+    <Compile Remove="Migrations\20210427184754_testMigration.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.9" />
