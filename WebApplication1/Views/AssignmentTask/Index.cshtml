@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ShoppingCart.Application.ViewModels.AssignmentTaskViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Your Tasks</h1>
+
+@if (this.User.IsInRole("Teacher"))
+{
+    <h3>Add new Task</h3>
+    <a href="/AssignmentTask/CreateTask" class="btn button btn-secondary">Add Task</a>
+}
+
+@foreach (var item in Model) { 
+    <div class="row p-3 border my-2">
+        <div class="col-10">
+            <h4>@item.Title</h4>
+            <p>@item.Description</p>
+            <p>Deadline: @item.Deadline</p>
+            <p> @item.Teacher</p>
+
+            @if (User.Identity.Name == item.Teacher)
+            {
+                <a class="btn-primary btn" href="/assignmentask/submissions?id=@item.Id">View Submissions</a>
+            }
+
+            @if (this.User.IsInRole("Student"))
+            {
+                @if (DateTime.Now > item.Deadline)
+                {
+                    <p class="text-danger">Deadline has passed, you cannot submit</p>
+                }
+                else
+                {
+                    <a href="/assignmentask/addsubmission?id=@item.Id" class="btn btn-lg">Add submission</a>
+                }
+            }
+        </div>
+
+    </div>
+}
+
+
+

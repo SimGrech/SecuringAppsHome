@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace ShoppingCart.Application.ViewModels
@@ -8,9 +9,16 @@ namespace ShoppingCart.Application.ViewModels
     {
         public Guid Id { get; set; }
 
+        
         public DateTime Deadline { get; set; }
 
-        public string TeacherEmail { get; set; }
+        [Required]
+        public string Title { get; set; }
+
+        [Required]
+        public string Description { get; set; }
+
+        public string Teacher { get; set; }
 
     }
 }

@@ -17,7 +17,8 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Areas.Identity.Pages.Account
 {
-    [AllowAnonymous]
+    //[AllowAnonymous]
+    [Authorize(Roles ="Teacher")]
     public class RegisterModel : PageModel
     {
         private readonly SignInManager<ApplicationUser> _signInManager;

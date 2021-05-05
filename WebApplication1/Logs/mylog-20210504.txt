@@ -1,0 +1,284 @@
+2021-05-04T18:49:36.6906924+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-05-04T18:49:36.7022178+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-05-04T18:49:36.7053679+02:00  [INF] Content root path: "D:\School\Level 6 Year 2\Semester 2\Securing Applications\Assignment\RyanCodeUpdated\SecuringAppsSWD62a-main\WebApplication1" (b5d60022)
+2021-05-04T18:49:36.8952789+02:00 8000004b-0000-fc00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T18:49:44.7809763+02:00 8000001d-0006-fd00-b63f-84710c7967bb [INF] "Simone Grech" logged in with "Google" provider. (107abac5)
+2021-05-04T18:52:40.0254295+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-05-04T18:52:40.0373978+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-05-04T18:52:40.0395932+02:00  [INF] Content root path: "D:\School\Level 6 Year 2\Semester 2\Securing Applications\Assignment\RyanCodeUpdated\SecuringAppsSWD62a-main\WebApplication1" (b5d60022)
+2021-05-04T18:52:40.2830245+02:00 80000004-0001-fd00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T18:52:45.4594633+02:00 8000001f-0006-fd00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T18:53:02.6643799+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-05-04T18:53:02.6751713+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-05-04T18:53:02.6774483+02:00  [INF] Content root path: "D:\School\Level 6 Year 2\Semester 2\Securing Applications\Assignment\RyanCodeUpdated\SecuringAppsSWD62a-main\WebApplication1" (b5d60022)
+2021-05-04T18:53:02.8925770+02:00 80000048-0002-fc00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T18:53:05.8280278+02:00 80000041-0006-ff00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T18:53:37.6160510+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-05-04T18:53:37.6250023+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-05-04T18:53:37.6266548+02:00  [INF] Content root path: "D:\School\Level 6 Year 2\Semester 2\Securing Applications\Assignment\RyanCodeUpdated\SecuringAppsSWD62a-main\WebApplication1" (b5d60022)
+2021-05-04T18:53:37.7374566+02:00 80000039-0003-ff00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T18:53:43.3374369+02:00 80000034-0001-ff00-b63f-84710c7967bb [INF] "Simone Grech" logged in with "Google" provider. (107abac5)
+2021-05-04T18:53:43.3525122+02:00 8000002a-0007-ff00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T18:54:00.0125472+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-05-04T18:54:00.0242987+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-05-04T18:54:00.0263712+02:00  [INF] Content root path: "D:\School\Level 6 Year 2\Semester 2\Securing Applications\Assignment\RyanCodeUpdated\SecuringAppsSWD62a-main\WebApplication1" (b5d60022)
+2021-05-04T18:54:00.2935349+02:00 8000003b-0003-ff00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T18:54:07.2293056+02:00 80000023-0006-fd00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T18:54:10.9437523+02:00 80000025-0006-fd00-b63f-84710c7967bb [INF] "Simone Grech" logged in with "Google" provider. (107abac5)
+2021-05-04T18:54:10.9563350+02:00 80000035-0000-ff00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T18:59:00.2738955+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-05-04T18:59:00.2845837+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-05-04T18:59:00.2864396+02:00  [INF] Content root path: "D:\School\Level 6 Year 2\Semester 2\Securing Applications\Assignment\RyanCodeUpdated\SecuringAppsSWD62a-main\WebApplication1" (b5d60022)
+2021-05-04T18:59:00.5192403+02:00 80000036-0001-ff00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T18:59:10.3944238+02:00 8000002e-0007-ff00-b63f-84710c7967bb [WRN] User "913d9ce0-0e49-4fd5-8647-12be8e775f85" password validation failed: "PasswordRequiresLower;PasswordRequiresUpper". (2f223212)
+2021-05-04T18:59:11.6975498+02:00 8000002e-0007-ff00-b63f-84710c7967bb [ERR] Failed executing DbCommand ("11"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([UserId], [RoleId])
+VALUES (@p0, @p1);" (627a98df)
+2021-05-04T18:59:12.1389634+02:00 8000002e-0007-ff00-b63f-84710c7967bb [ERR] An exception occurred in the database while saving changes for context type '"WebApplication1.Data.ApplicationDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_AspNetUserRoles_AspNetUsers_UserId\". The conflict occurred in database \"SecuringHomeDb\", table \"dbo.AspNetUsers\", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:beda21e1-aa28-46c9-a5a7-7578fb57ac09
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_AspNetUserRoles_AspNetUsers_UserId". The conflict occurred in database "SecuringHomeDb", table "dbo.AspNetUsers", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:beda21e1-aa28-46c9-a5a7-7578fb57ac09
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.UpdateAsync(TUser user, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.UpdateUserAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.AddToRoleAsync(TUser user, String role)
+   at WebApplication1.Controllers.AccountController.IndexAsync(NewStudentModel newUser) in D:\School\Level 6 Year 2\Semester 2\Securing Applications\Assignment\RyanCodeUpdated\SecuringAppsSWD62a-main\WebApplication1\Controllers\AccountController.cs:line 54
+2021-05-04T18:59:12.6036933+02:00 8000002e-0007-ff00-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_AspNetUserRoles_AspNetUsers_UserId". The conflict occurred in database "SecuringHomeDb", table "dbo.AspNetUsers", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:beda21e1-aa28-46c9-a5a7-7578fb57ac09
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.UpdateAsync(TUser user, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.UpdateUserAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.AddToRoleAsync(TUser user, String role)
+   at WebApplication1.Controllers.AccountController.IndexAsync(NewStudentModel newUser) in D:\School\Level 6 Year 2\Semester 2\Securing Applications\Assignment\RyanCodeUpdated\SecuringAppsSWD62a-main\WebApplication1\Controllers\AccountController.cs:line 54
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-05-04T19:05:47.7183240+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-05-04T19:05:47.7296635+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-05-04T19:05:47.7316016+02:00  [INF] Content root path: "D:\School\Level 6 Year 2\Semester 2\Securing Applications\Assignment\RyanCodeUpdated\SecuringAppsSWD62a-main\WebApplication1" (b5d60022)
+2021-05-04T19:05:47.9419881+02:00 80000037-0005-ff00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T19:06:09.2415372+02:00 80000058-0000-fc00-b63f-84710c7967bb [WRN] User "ba71bdad-1d5d-4d7d-b6b6-37b92e015c0f" password validation failed: "PasswordRequiresLower;PasswordRequiresUpper". (2f223212)
+2021-05-04T19:06:11.8552310+02:00 80000058-0000-fc00-b63f-84710c7967bb [ERR] Failed executing DbCommand ("7"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([UserId], [RoleId])
+VALUES (@p0, @p1);" (627a98df)
+2021-05-04T19:06:11.9117693+02:00 80000058-0000-fc00-b63f-84710c7967bb [ERR] An exception occurred in the database while saving changes for context type '"WebApplication1.Data.ApplicationDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_AspNetUserRoles_AspNetUsers_UserId\". The conflict occurred in database \"SecuringHomeDb\", table \"dbo.AspNetUsers\", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:ab52e4a5-3b1c-4ff7-9d68-f68ac347fe0a
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_AspNetUserRoles_AspNetUsers_UserId". The conflict occurred in database "SecuringHomeDb", table "dbo.AspNetUsers", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:ab52e4a5-3b1c-4ff7-9d68-f68ac347fe0a
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2021-05-04T19:06:12.1530917+02:00 80000058-0000-fc00-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_AspNetUserRoles_AspNetUsers_UserId". The conflict occurred in database "SecuringHomeDb", table "dbo.AspNetUsers", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:ab52e4a5-3b1c-4ff7-9d68-f68ac347fe0a
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.UpdateAsync(TUser user, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.UpdateUserAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.AddToRoleAsync(TUser user, String role)
+   at WebApplication1.Controllers.AccountController.IndexAsync(NewStudentModel newUser) in D:\School\Level 6 Year 2\Semester 2\Securing Applications\Assignment\RyanCodeUpdated\SecuringAppsSWD62a-main\WebApplication1\Controllers\AccountController.cs:line 54
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-05-04T19:07:00.4187809+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-05-04T19:07:00.4307005+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-05-04T19:07:00.4327467+02:00  [INF] Content root path: "D:\School\Level 6 Year 2\Semester 2\Securing Applications\Assignment\RyanCodeUpdated\SecuringAppsSWD62a-main\WebApplication1" (b5d60022)
+2021-05-04T19:07:00.6695361+02:00 80000038-0001-ff00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T19:07:09.6834622+02:00 80000029-0006-fd00-b63f-84710c7967bb [WRN] User "1bbe615c-976a-4a48-a171-cc20d4932500" password validation failed: "PasswordRequiresLower;PasswordRequiresUpper". (2f223212)
+2021-05-04T20:29:26.6398968+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-05-04T20:29:26.6498316+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-05-04T20:29:26.6522769+02:00  [INF] Content root path: "D:\School\Level 6 Year 2\Semester 2\Securing Applications\Assignment\RyanCodeUpdated\SecuringAppsSWD62a-main\WebApplication1" (b5d60022)
+2021-05-04T20:29:28.1371914+02:00 80000019-0004-fd00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T20:30:04.6115008+02:00 8000002b-0006-fd00-b63f-84710c7967bb [WRN] User "204873f4-8c62-471f-ad42-bab14fd776b7" password validation failed: "PasswordRequiresLower;PasswordRequiresUpper". (2f223212)
+2021-05-04T20:30:34.0743515+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-05-04T20:30:34.0823053+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-05-04T20:30:34.0840827+02:00  [INF] Content root path: "D:\School\Level 6 Year 2\Semester 2\Securing Applications\Assignment\RyanCodeUpdated\SecuringAppsSWD62a-main\WebApplication1" (b5d60022)
+2021-05-04T20:30:34.3043273+02:00 80000003-0003-fd00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T20:31:13.2210530+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-05-04T20:31:13.2289970+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-05-04T20:31:13.2304074+02:00  [INF] Content root path: "D:\School\Level 6 Year 2\Semester 2\Securing Applications\Assignment\RyanCodeUpdated\SecuringAppsSWD62a-main\WebApplication1" (b5d60022)
+2021-05-04T20:31:13.4499206+02:00 8000000f-0002-fd00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T21:14:01.0394987+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-05-04T21:14:01.0482192+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-05-04T21:14:01.0500626+02:00  [INF] Content root path: "D:\School\Level 6 Year 2\Semester 2\Securing Applications\Assignment\RyanCodeUpdated\SecuringAppsSWD62a-main\WebApplication1" (b5d60022)
+2021-05-04T21:14:02.8202627+02:00 8000002d-0006-fd00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T21:14:26.3294577+02:00 8000001d-0004-fd00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T21:14:30.1263006+02:00 80000021-0004-fd00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T21:14:42.5984062+02:00 80000023-0004-fd00-b63f-84710c7967bb [INF] User logged in. (fdce0db4)
+2021-05-04T21:14:46.5988477+02:00 80000031-0006-fd00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T21:16:21.3887117+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-05-04T21:16:21.3972085+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-05-04T21:16:21.3991669+02:00  [INF] Content root path: "D:\School\Level 6 Year 2\Semester 2\Securing Applications\Assignment\RyanCodeUpdated\SecuringAppsSWD62a-main\WebApplication1" (b5d60022)
+2021-05-04T21:16:21.6416562+02:00 80000013-0002-fd00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T21:16:26.7948227+02:00 80000044-0006-ff00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T21:16:30.1520986+02:00 80000069-0000-fc00-b63f-84710c7967bb [INF] "Simone Grech" logged in with "Google" provider. (107abac5)
+2021-05-04T21:16:30.1612385+02:00 80000017-0002-fd00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T21:16:34.6427014+02:00 80000046-0006-ff00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)
+2021-05-04T21:16:44.3349920+02:00 8000001b-0002-fd00-b63f-84710c7967bb [INF] User logged in. (fdce0db4)
+2021-05-04T21:16:44.4443790+02:00 8000001d-0002-fd00-b63f-84710c7967bb [INF] Home Index accessed (f306b1a0)

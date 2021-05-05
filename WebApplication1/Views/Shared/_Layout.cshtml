@@ -25,6 +25,19 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        @if (User.IsInRole("Teacher") || User.IsInRole("Student"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="AssignmentTask" asp-action="index">Tasks</a>
+                            </li>
+                        }
+                        @if (User.IsInRole("Teacher")){ 
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="index">New Student</a>
+                            </li>
+                        }
+
+
                     </ul>
                 </div>
             </div>
