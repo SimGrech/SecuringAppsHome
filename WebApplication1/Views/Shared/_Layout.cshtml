@@ -31,12 +31,18 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="AssignmentTask" asp-action="index">Tasks</a>
                             </li>
                         }
-                        @if (User.IsInRole("Teacher")){ 
+                        @if (User.IsInRole("Teacher"))
+                        {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="index">New Student</a>
                             </li>
                         }
-
+                        @if (User.IsInRole("Student"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="AssignmentTask" asp-action="ViewUserSubmissions">My Submissions</a>
+                            </li>
+                        }
 
                     </ul>
                 </div>

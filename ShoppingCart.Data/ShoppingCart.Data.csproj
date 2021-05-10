@@ -11,6 +11,8 @@
     <Compile Remove="Migrations\20210427183931_newtaskmodels.Designer.cs" />
     <Compile Remove="Migrations\20210427184754_testMigration.cs" />
     <Compile Remove="Migrations\20210427184754_testMigration.Designer.cs" />
+    <Compile Remove="Migrations\20210508155143_addedcommentslist.cs" />
+    <Compile Remove="Migrations\20210508155143_addedcommentslist.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

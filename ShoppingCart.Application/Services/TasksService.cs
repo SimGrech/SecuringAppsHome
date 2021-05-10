@@ -16,7 +16,8 @@ namespace ShoppingCart.Application.Services
         private ITasksRepository _tasksRepo;
         private IMapper _mapper;
 
-        public TasksService(ITasksRepository tasksRepository, IMapper mapper) {
+        public TasksService(ITasksRepository tasksRepository, IMapper mapper)
+        {
             _tasksRepo = tasksRepository;
             _mapper = mapper;
         }
@@ -24,7 +25,8 @@ namespace ShoppingCart.Application.Services
         public void AddSubmission(SubmissionViewModel submission)
         {
             var userSubmission = _mapper.Map<Submission>(submission);
-            userSubmission.Task = null;
+            userSubmission.AssignmentTask = null;
+            userSubmission.TaskId = submission.AssignmentTask.Id;
             _tasksRepo.AddSubmission(userSubmission);
             //throw new NotImplementedException();
         }
@@ -46,9 +48,16 @@ namespace ShoppingCart.Application.Services
 
         public IQueryable<SubmissionViewModel> GetSubmissions(Guid taskId)
         {
-            var assignmentTasks = _tasksRepo.GetSubmissions(taskId).ProjectTo<SubmissionViewModel>(_mapper.ConfigurationProvider);
-            return assignmentTasks;
+            var taskSubmissions = _tasksRepo.GetSubmissions(taskId).ProjectTo<SubmissionViewModel>(_mapper.ConfigurationProvider);
+            return taskSubmissions;
             //throw new NotImplementedException();
+        }
+
+        //Get user Submissions
+        public IQueryable<SubmissionViewModel> GetUserSubmissions(string email)
+        {
+            var userTaskSubmissions = _tasksRepo.GetUserSubmissions(email).ProjectTo<SubmissionViewModel>(_mapper.ConfigurationProvider);
+            return userTaskSubmissions;
         }
 
         public AssignmentTaskViewModel GetTask(Guid id)
@@ -65,5 +74,23 @@ namespace ShoppingCart.Application.Services
             return myTasks;
             //throw new NotImplementedException();
         }
+
+        public IQueryable<CommentViewModel> GetSubmissionComments(Guid submissionId) {
+            var submissionComments = _tasksRepo.GetSubmissionComments(submissionId).ProjectTo<CommentViewModel>(_mapper.ConfigurationProvider);
+            return submissionComments;
+        }
+
+        public void AddComment(CommentViewModel comment) {
+            var myComment = _mapper.Map<Comment>(comment);
+            myComment.SubmissionId = myComment.Submission.Id;
+            myComment.Submission = null;
+            _tasksRepo.AddComment(myComment);
+        }
+
+        public bool SubmissionCopied(string hash) {
+            bool isCopied = _tasksRepo.SubmissionCopied(hash);
+            return isCopied;
+        }
+
     }
 }

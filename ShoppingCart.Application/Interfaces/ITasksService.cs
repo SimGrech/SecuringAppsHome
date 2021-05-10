@@ -22,5 +22,15 @@ namespace ShoppingCart.Application.Interfaces
         //Gets a submission's info
         SubmissionViewModel GetSubmission(Guid id);
 
+        //Get user Submissions
+        IQueryable<SubmissionViewModel> GetUserSubmissions(string email);
+
+        IQueryable<CommentViewModel> GetSubmissionComments(Guid submissionId);
+
+        void AddComment(CommentViewModel comment);
+
+        bool SubmissionCopied(string hash);
+
     }
+        
 }

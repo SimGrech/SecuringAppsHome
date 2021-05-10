@@ -1,7 +1,8 @@
 ﻿@model IEnumerable<ShoppingCart.Application.ViewModels.AssignmentTaskViewModel>
+@using WebApplication1.Utility;
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Tasks";
 }
 
 <h1>Your Tasks</h1>
@@ -18,23 +19,40 @@
             <h4>@item.Title</h4>
             <p>@item.Description</p>
             <p>Deadline: @item.Deadline</p>
-            <p> @item.Teacher</p>
+            <p>Teacher: @item.Teacher</p>
 
             @if (User.Identity.Name == item.Teacher)
             {
-                <a class="btn-primary btn" href="/assignmentask/submissions?id=@item.Id">View Submissions</a>
+                string id = item.Id.ToString();
+                string encryptedId = Encryption.SymmetricEncrypt(id);
+                <a class="btn-primary btn" href="/AssignmentTask/ViewTaskSubmissions?eid=@encryptedId">View Submissions</a>
+                //<a href="/AssignmentTask/AddComment?id=@Html.DisplayFor(model => model.Id)" class="btn btn-dark btn-block mb-2">Add Comment</a
             }
 
             @if (this.User.IsInRole("Student"))
             {
-                @if (DateTime.Now > item.Deadline)
+                @if (ViewBag.userSubmittedTaskIds != null)
                 {
-                    <p class="text-danger">Deadline has passed, you cannot submit</p>
+                    List<Guid> taskIds = ViewBag.userSubmittedTaskIds;
+                    if (taskIds.Contains(item.Id))
+                    {
+                        <p>Already submitted</p>
+                    }
+                    else
+                    {
+                        if (DateTime.Now > item.Deadline)
+                        {
+                            <p class="text-danger">Deadline has passed, you cannot submit</p>
+                        }
+                        else
+                        {
+                            string subid = item.Id.ToString();
+                            string encryptedSubId = Encryption.SymmetricEncrypt(subid);
+                            <a href="/AssignmentTask/UploadSubmission?eid=@encryptedSubId" class="btn btn-primary">Add submission</a>
+                        }
+                    }
                 }
-                else
-                {
-                    <a href="/assignmentask/addsubmission?id=@item.Id" class="btn btn-lg">Add submission</a>
-                }
+
             }
         </div>
 

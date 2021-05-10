@@ -1,0 +1,90 @@
+﻿@model ShoppingCart.Application.ViewModels.SubmissionViewModel
+@using WebApplication1.Utility;
+
+@{
+    ViewData["Title"] = "View Submission";
+}
+
+<h1>View Submission</h1>
+
+<div>
+    <h4>Submission</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FileName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FileName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TimeSubmitted)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TimeSubmitted)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AssignmentTask)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AssignmentTask.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Owner)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Owner)
+        </dd>
+    </dl>
+</div>
+@if (ViewBag.Copied != null && ViewBag.Copied == true)
+{
+    <div class="alert alert-danger">
+        <p>Student's assignment is copied.</p>
+
+    </div>
+}
+<div>
+    @{ 
+    string id2 = Model.Id.ToString();
+    string encryptedId2 = Encryption.SymmetricEncrypt(id2);
+    <a href="/AssignmentTask/DownloadFile?eid=@encryptedId2" class="btn btn-dark btn-block mb-2">Download</a>
+    }
+</div>
+
+<div class="container">
+    <h1>Comments</h1>
+
+    @{
+        //<a href="/AssignmentTask/AddComment?id=@Html.DisplayFor(model => model.Id)" class="btn btn-dark btn-block mb-2">Add Comment</a>
+        string id = Model.Id.ToString();
+        string encryptedId = Encryption.SymmetricEncrypt(id);
+        <a href="/AssignmentTask/AddComment?eid=@encryptedId" class="btn btn-dark btn-block mb-2">Add Comment</a>
+    }
+
+    @if (ViewBag.SubmissionComments != null)
+    {
+        foreach (var comment in ViewBag.SubmissionComments)
+        {
+            <div class="card mt-2">
+                <div class="row">
+                    <div class="col-12 card-body">
+                        <small class="text-truncate">@comment.Author</small>
+                        <p class="m-0 p-o text-left">@comment.Content</p>
+                        <div class="text-right"><small class="text-right">@comment.Posted</small></div>
+                    </div>
+
+                </div>
+
+            </div>
+        }
+
+    }
+</div>

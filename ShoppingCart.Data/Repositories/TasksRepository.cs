@@ -40,6 +40,11 @@ namespace ShoppingCart.Data.Repositories
             return _context.Submissions.Where(x => x.TaskId == taskId);
         }
 
+        //Get user Submissions
+        public IQueryable<Submission> GetUserSubmissions(string email) {
+            return _context.Submissions.Where(x => x.Owner == email);
+        }
+
         public AssignmentTask GetTask(Guid id)
         {
             return _context.AssignmentTasks.SingleOrDefault(x => x.Id == id);
@@ -49,6 +54,27 @@ namespace ShoppingCart.Data.Repositories
         public IQueryable<AssignmentTask> GetTasks(string email)
         {
             return _context.AssignmentTasks.Where(x => x.Teacher == email);
+        }
+
+        public IQueryable<Comment> GetSubmissionComments(Guid submissionId) {
+            return _context.Comments.Where(x => x.SubmissionId == submissionId).OrderBy(x => x.Posted);
+        }
+
+        public void AddComment(Comment comment) {
+            _context.Comments.Add(comment);
+            _context.SaveChanges();
+        }
+
+        public bool SubmissionCopied(string hash) {
+            IQueryable<Submission> submissions = _context.Submissions.Where(x => x.Hash == hash);
+            int count = submissions.Count();
+            if (count == 1)
+            {
+                return false;
+            }
+            else {
+                return true;
+            }
         }
     }
 }

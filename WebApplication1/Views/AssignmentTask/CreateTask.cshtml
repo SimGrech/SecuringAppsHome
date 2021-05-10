@@ -1,11 +1,14 @@
 ﻿@model ShoppingCart.Application.ViewModels.AssignmentTaskViewModel
-
+@{
+    ViewData["Title"] = "Create Task";
+}
 <h1>Create</h1>
 
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="CreateTask">
+            @Html.AntiForgeryToken()
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Deadline" class="control-label"></label>
@@ -23,7 +26,7 @@
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
 
-            <input asp-for="Teacher" style="visibility:hidden" value="@User.Identity.Name"/>
+            <input asp-for="Teacher" style="visibility:hidden" value="@User.Identity.Name" />
 
             <div class="form-group">
                 <input type="submit" value="CreateTask" class="btn btn-primary" />

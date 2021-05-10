@@ -1,0 +1,48 @@
+﻿@model ShoppingCart.Application.ViewModels.SubmissionViewModel;
+
+@{ ViewData["Title"] = "New Submission"; }
+
+<h1>Create</h1>
+
+<h4>New Submission</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="UploadSubmission" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="FileName" class="control-label"></label>
+                <input asp-for="FileName" class="form-control" />
+                <span asp-validation-for="FileName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Path" class="control-label"></label>
+                <input type="file" name="file" class="form-control" />
+                <span name="file" class="text-danger"></span>
+            </div>
+
+            <input asp-for="AssignmentTask.Id" style="visibility:hidden" value="@ViewBag.TaskId" />
+
+            <div class="form-group">
+                <input type="submit" value="UploadSubmission" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

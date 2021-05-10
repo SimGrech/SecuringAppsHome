@@ -82,6 +82,9 @@ namespace WebApplication1
         {
             loggerFactory.AddFile("logs/mylog-{Date}.txt");
 
+            //File access Logs
+            
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

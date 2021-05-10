@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.Text;
 using System.IO;
+using System.Web;
 
 namespace WebApplication1.Utility
 {
@@ -69,6 +70,7 @@ namespace WebApplication1.Utility
         public static byte[] Hash(byte[] clearTextBytes)
         {
             SHA512 myAlg = SHA512.Create();
+
             byte[] digest = myAlg.ComputeHash(clearTextBytes);
             return digest;
         }
@@ -86,7 +88,7 @@ namespace WebApplication1.Utility
         /// </summary>
         /// <param name="clearData"></param>
         /// <returns></returns>
-        public static byte[] SymmetricEncrypt(byte[] clearData )
+        public static byte[] SymmetricEncrypt(byte[] clearData)
         {
             //Note:
             //1st thing is to think of how you are going to handle the keys
@@ -155,7 +157,7 @@ namespace WebApplication1.Utility
         //clear bytes = original data (input by the user)
         //cipher = encrypted data
         public static byte[] SymmetricDecrypt(byte[] cipherAsBytes)
-         {
+        {
             //0. declare the algorithm to use
             Rijndael myAlg = Rijndael.Create();
             //1. first we generate the secret key and iv
@@ -187,8 +189,75 @@ namespace WebApplication1.Utility
             return msOut.ToArray();
         }
 
+        //Hybrid Key Encryption
+        //Copied ready symmetricencrypt and replaced the generation of keys
+        public static byte[] SymmetricEncrypt(byte[] clearData, byte[] key, byte[] iv)
+        {
+            //0. declare the algorithm to use
+            Rijndael myAlg = Rijndael.Create();
+
+
+            //2. load the data into a MemoryStream
+            MemoryStream msIn = new MemoryStream(clearData);
+            msIn.Position = 0; //making sure that the pointer of the byte to read next is at the beginning so we encrypt everything
+
+            //3. declare where to store the encrypted data
+            MemoryStream msOut = new MemoryStream();
+
+            //4. declaring a Stream which handles data encryption
+            CryptoStream cs = new CryptoStream(msOut, //target stream where to write the data
+                myAlg.CreateEncryptor(key, iv), //the engine that operate the encrypting medium
+                 CryptoStreamMode.Write //this will write the data fed into the medium
+                    );
+
+            //5. we start the encrypting engine
+            msIn.CopyTo(cs);
+
+            //6. make sure that the data is all written (flushed) into msOut
+            cs.FlushFinalBlock();
+
+            //7. 
+            cs.Close();
+
+            //8.
+            return msOut.ToArray();
+
+        }
+
+        //Hybrid Key Decryption
+        public static byte[] SymmetricDecrypt(byte[] cipherAsBytes, byte[] key, byte[] iv)
+        {
+            //0. declare the algorithm to use
+            Rijndael myAlg = Rijndael.Create();
+
+            //2. load the data into a MemoryStream
+            MemoryStream msIn = new MemoryStream(cipherAsBytes);
+            msIn.Position = 0; //making sure that the pointer of the byte to read next is at the beginning so we encrypt everything
+
+            //3. declare where to store the clear data
+            MemoryStream msOut = new MemoryStream();
+
+            //4. declaring a Stream which handles data decryption
+            CryptoStream cs = new CryptoStream(msOut, //target stream where to write the data
+                myAlg.CreateDecryptor(key, iv), //the engine that operate the encrypting medium
+                 CryptoStreamMode.Write //this will write the data fed into the medium
+                    );
+
+            //5. we start the encrypting engine
+            msIn.CopyTo(cs);
+
+            //6. make sure that the data is all written (flushed) into msOut
+            cs.FlushFinalBlock();
+
+            //7. 
+            cs.Close();
+
+            //8.
+            return msOut.ToArray();
+        }
+
         public static string SymmetricEncrypt(string clearData)
-         {
+        {
             //1. convert
             //   To convert any input (given by the user) we normally use Encoding.<character set>.GetBytes(...)
 
@@ -202,14 +271,24 @@ namespace WebApplication1.Utility
             string cipher = Convert.ToBase64String(cipherAsBytes);
 
 
+            //cipher = HttpUtility.UrlEncode(cipher);
+
+
             //if used in querystrings remember to replace the / + = with any other characters which do not mean anything
+            cipher = cipher.Replace("/", "%2f");
+            cipher = cipher.Replace("+", "%2b");
+            cipher = cipher.Replace("=", "%3d");
             //in a querystring
 
             return cipher;
-         }
+        }
 
         public static string SymmetricDecrypt(string cipher)
         {
+            //cipher = HttpUtility.UrlDecode(cipher);
+            cipher = cipher.Replace("%2f", "/");
+            cipher = cipher.Replace("%2b", "+");
+            cipher = cipher.Replace("%3d", "=");
 
             //remember to replace back any of the characters / + =
 
@@ -299,8 +378,8 @@ namespace WebApplication1.Utility
 
 
             //4. store the above encryted data n one file
-            byte[] encrtypedKey= Convert.FromBase64String(encryptedKeyAsString) ;
-           // byte[] encyptedIv;
+            byte[] encrtypedKey = Convert.FromBase64String(encryptedKeyAsString);
+            // byte[] encyptedIv;
             byte[] encryptedBytes; //this the uploaded file content
 
             MemoryStream msOut = new MemoryStream();
@@ -308,12 +387,50 @@ namespace WebApplication1.Utility
             // msOut.Write(encyptedIv, 0, encyptedIv.Length);
 
             //encryptedBytes  [234alsdjfalsdkfj;alskdfjalsdkjfalskdjflaskdjflaskdjflasdjflaksjdflaksdjflaksd;jflaskdjaskldjflsdkfj]
-          /*  MemoryStream encryptedfileContent = new MemoryStream(encryptedBytes);
-            encryptedfileContent.Position = 0;
-            encryptedfileContent.CopyTo(msOut);
-          */
+            /*  MemoryStream encryptedfileContent = new MemoryStream(encryptedBytes);
+              encryptedfileContent.Position = 0;
+              encryptedfileContent.CopyTo(msOut);
+            */
             return msOut;
         }
+
+
+        public static string SignData(MemoryStream data, string privateKey)
+        {
+            RSACryptoServiceProvider myAlg = new RSACryptoServiceProvider();
+            myAlg.FromXmlString(privateKey);
+
+            //change the data from MemoryStream into byte[]
+            byte[] dataAsBytes = data.ToArray();
+
+            //Hash the data
+            byte[] digest = Hash(dataAsBytes);
+
+            byte[] signatureAsBytes = myAlg.SignHash(digest, "SHA512");
+            //save the signature in the database > table containing the file data.
+
+            return Convert.ToBase64String(signatureAsBytes);
+        }
+
+        public static bool VerifyData(MemoryStream data, string publicKey, string signature)
+        {
+            RSACryptoServiceProvider myAlg = new RSACryptoServiceProvider();
+            myAlg.FromXmlString(publicKey);
+
+            //change the data from MemoryStream into byte[]
+            byte[] dataAsBytes = data.ToArray();
+
+            //Hash the data
+            byte[] digest = Hash(dataAsBytes);
+
+            //converting the signature into an array of bytes
+            byte[] signatureAsBytes = Convert.FromBase64String(signature);
+
+            bool valid = myAlg.VerifyHash(digest, "SHA512", signatureAsBytes);
+
+            return valid;
+        }
+
 
     }
 

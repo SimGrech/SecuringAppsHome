@@ -21,7 +21,7 @@ namespace WebApplication1.Controllers
         public IActionResult Index()
         {
 
-            _logger.LogInformation("Home Index accessed");
+            //_logger.LogInformation("Home Index accessed");
 
             return View();
         }

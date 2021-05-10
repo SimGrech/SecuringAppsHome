@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ShoppingCart.Application.ViewModels.SubmissionViewModel>
+@using WebApplication1.Utility;
+
+@{ 
+    ViewData["Title"] = "Submissions";
+}
+
+<h1>Your Submissions</h1>
+
+<div class="container">
+    <div class="row row-cols-2">
+        @foreach (var submission in Model)
+        {
+            <div class="col-md-4 col-sm-12 mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@submission.AssignmentTask.Title</h5>
+                        <p class="card-text">Date submitted: @submission.TimeSubmitted</p>
+                        <p class="card-text">Submission Title: @submission.FileName</p>
+
+                        @{
+                            //<a href="/AssignmentTask/ViewSubmission?id=@submission.Id" class="btn btn-dark btn-block mb-2">View Submission</a>
+                            string encryptedId = Encryption.SymmetricEncrypt(submission.Id.ToString());
+
+                            <a href="/AssignmentTask/ViewSubmission?eid=@encryptedId" class="btn btn-dark btn-block mb-2">View Submission</a>
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+
+
+
+</div>

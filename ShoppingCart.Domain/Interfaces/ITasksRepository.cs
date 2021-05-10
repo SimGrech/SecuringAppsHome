@@ -23,6 +23,14 @@ namespace ShoppingCart.Domain.Interfaces
         //Gets all submissions under the specified task id
         IQueryable<Submission> GetSubmissions(Guid taskId);
 
+        //Get user Submissions
+        IQueryable<Submission> GetUserSubmissions(string email);
+
+        IQueryable<Comment> GetSubmissionComments(Guid submissionId);
+
+        void AddComment(Comment comment);
+
+        bool SubmissionCopied(string hash);
 
     }
 }
