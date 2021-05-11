@@ -85,7 +85,7 @@ namespace WebApplication1.Controllers
                         smtp.Send(mailMessage);
                         */
 
-                        //Email only sending to gmail emails
+                        
                         var message = new MimeMessage();
                         message.From.Add(new MailboxAddress("Securing Home App", "simsecuringhome@gmail.com"));
                         message.To.Add(new MailboxAddress(user.FirstName, emailTo));

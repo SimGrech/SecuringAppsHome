@@ -36,7 +36,7 @@ namespace WebApplication1.ActionFilters
                 //var product = prodService.GetProduct(id);
                 if ((submission.Owner != currentLoggedInUser) && !isUserTeacher)
                 {
-                    string logString = $"User {currentLoggedInUser} tried to access file with id {submission.Id}. IP: {context.HttpContext.Connection.RemoteIpAddress.ToString()}, Timestamp: {DateTime.Now}";
+                    string logString = $"User {currentLoggedInUser} tried to access file with id {submission.Id}. IP: {context.HttpContext.Connection.RemoteIpAddress.ToString()}, Timestamp: {DateTime.Now.ToString("yyyyMMddHHmmssffff")} DateTime: {DateTime.Now}";
                     logger.LogWarning(logString);
                     context.Result = new UnauthorizedObjectResult("Access Denied");
                 }
