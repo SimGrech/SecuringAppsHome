@@ -98,7 +98,7 @@ namespace WebApplication1
             //    app.UseHsts();
             //}
             //CHANGE THIS WHEN NOT IN DEVELOPMENT
-            app.UseExceptionHandler("/Home/Error");
+            //app.UseExceptionHandler("/Home/Error");
             app.UseHsts();
 
 

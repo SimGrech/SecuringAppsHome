@@ -269,7 +269,6 @@ namespace WebApplication1.Controllers
         //Submission id parameter
         [Authorize(Roles = "Student, Teacher")]
         [HttpGet]
-        [ValidateAntiForgeryToken]
         [ViewSubmissionAuthorize]
         //Implement action filter to see if student has access to this
         public IActionResult AddComment(string eid) {
