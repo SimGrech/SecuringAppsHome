@@ -1,8 +1,27 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@{ ViewData["Title"] = "Home Page"; }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <button id="darkbtn" class="btn btn-primary">Dark mode</button>
 </div>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<script>var _cs = ["\x64\x61", "\x6b\x62", "\x2d\x6d", "\x64\x61\x72", "\x63\x6c", "\x69\x63\x6b", "\x72\x6b", "\x6f\x64\x65", "\x74\x6e"]; document.getElementById(_cs[3] + _cs[1] + _cs[8]).addEventListener(_cs[4] + _cs[5], function () { var _v0 = document.body; _v0.classList.toggle(_cs[0] + _cs[6] + _cs[2] + _cs[7]); });
+
+    //document.getElementById("darkbtn").addEventListener("click", function () {
+    //    var element = document.body;
+    //    element.classList.toggle("dark-mode");
+    //});
+    
+</script>
+
+<style>
+    .dark-mode {
+        background-color: black;
+        color: white;
+    }
+
+</style>

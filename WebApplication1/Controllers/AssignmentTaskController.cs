@@ -172,7 +172,10 @@ namespace WebApplication1.Controllers
                             uniqueFilename = Guid.NewGuid() + Path.GetExtension(file.FileName);
                             submission.Path = uniqueFilename;
 
-                           
+                            //MemoryStream encryptedStream = Utility.Encryption.HybridEncrypt(userFile, user.PublicKey);
+
+                            //MemoryStream clearFile = Utility.Encryption.HybridDecrypt(encryptedStream, user.PrivateKey);
+
                             submission.Signature = Utility.Encryption.SignData(userFile, user.PrivateKey);
 
                             byte[] toHash = userFile.ToArray();

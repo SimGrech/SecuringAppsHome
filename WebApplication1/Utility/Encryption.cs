@@ -359,41 +359,62 @@ namespace WebApplication1.Utility
 
 
         //clear = unencrypted
+        //https://riptutorial.com/csharp/example/32687/fast-asymmetric-file-encryption Tutorial followed
         public static MemoryStream HybridEncrypt(MemoryStream clearFile, string publicKey)
         {
             //preparation:
-            //              you need to fetch from db the public pertaining to the uploading/logged in user
+            //you need to fetch from db the public pertaining to the uploading/logged in user
 
             //1. Generate the symmetric keys
             Rijndael myAlg = Rijndael.Create();
             myAlg.GenerateKey(); myAlg.GenerateIV();
             var key = myAlg.Key; var iv = myAlg.IV;
 
-            //2. Encrypting the clearFile using Symmetric Encryption
-            //var encryptedBytes =  SymmetricEncrypt(clearFileAsBytes, key, iv)
-
-            //3. Asymmetrically encrypt using the public key, the symm key and iv above
+            //2. Asymmetrically encrypt using the public key, the symm key and iv above
             string keyAsString = Convert.ToBase64String(key);
             string encryptedKeyAsString = AsymmetricEncrypt(keyAsString, publicKey);
 
+            string ivAsString = Convert.ToBase64String(iv);
+            string encryptedIvAsString = AsymmetricEncrypt(ivAsString, publicKey);
+
+            //3. Encrypting the clearFile using Symmetric Encryption
+            byte[] clearFileBytes = clearFile.ToArray();
+
+            byte[] encryptedBytes = SymmetricEncrypt(clearFileBytes, key, iv);
 
             //4. store the above encryted data n one file
             byte[] encrtypedKey = Convert.FromBase64String(encryptedKeyAsString);
-            // byte[] encyptedIv;
-            byte[] encryptedBytes; //this the uploaded file content
+            byte[] encryptedIv = Convert.FromBase64String(encryptedIvAsString);
+
+            //byte[] encryptedBytes; //this the uploaded file content
 
             MemoryStream msOut = new MemoryStream();
             msOut.Write(encrtypedKey, 0, encrtypedKey.Length);
-            // msOut.Write(encyptedIv, 0, encyptedIv.Length);
+            msOut.Write(encryptedIv, 0, encryptedIv.Length);
 
             //encryptedBytes  [234alsdjfalsdkfj;alskdfjalsdkjfalskdjflaskdjflaskdjflasdjflaksjdflaksdjflaksd;jflaskdjaskldjflsdkfj]
-            /*  MemoryStream encryptedfileContent = new MemoryStream(encryptedBytes);
-              encryptedfileContent.Position = 0;
-              encryptedfileContent.CopyTo(msOut);
-            */
+            MemoryStream encryptedfileContent = new MemoryStream(encryptedBytes);
+            encryptedfileContent.Position = 0;
+            encryptedfileContent.CopyTo(msOut);
+            
             return msOut;
         }
 
+        public static MemoryStream HybridDecrypt(MemoryStream encFile, string privateKey) {
+            var encryptedKey = new byte[sizeof(int)];
+            var encryptedIv = new byte[sizeof(int)];
+
+            //Sets the encrypted key
+            encFile.Read(encryptedKey, 0, encryptedKey.Length);
+            var encryptedKeyLength = encryptedKey.Length;
+
+            encFile.Read(encryptedIv, 0, encryptedKeyLength);
+
+            var decryptedKey = AsymmetricDecrypt(Convert.ToBase64String(encryptedKey), privateKey);
+            var decryptedIv = AsymmetricDecrypt(Convert.ToBase64String(encryptedIv), privateKey);
+
+            throw new NotImplementedException();
+        }
 
         public static string SignData(MemoryStream data, string privateKey)
         {
