@@ -81,6 +81,7 @@ namespace WebApplication1.Controllers
             //Teacher Email being set from hidden field (Encoding just in case)
             task.Teacher = HtmlEncoder.Default.Encode(task.Teacher);
 
+            //If Created task's deadline is in the past
             if (task.Deadline > DateTime.Now)
             {
                 _taskService.AddTask(task);
@@ -116,13 +117,13 @@ namespace WebApplication1.Controllers
         [HttpPost]
         [Authorize(Roles = "Student")]
         [ValidateAntiForgeryToken]
-
         public async Task<IActionResult> UploadSubmissionAsync(SubmissionViewModel submission, IFormFile file)
         {
             Guid guid = submission.AssignmentTask.Id;
             submission.AssignmentTask = _taskService.GetTask(guid);
             submission.Owner = User.Identity.Name;
             submission.TimeSubmitted = DateTime.Now;
+            //Encoding of data to avoid injections
             submission.FileName = HtmlEncoder.Default.Encode(submission.FileName);
             submission.Description = HtmlEncoder.Default.Encode(submission.Description);
 
@@ -132,16 +133,13 @@ namespace WebApplication1.Controllers
             {
 
                 string uniqueFilename;
-                if (System.IO.Path.GetExtension(file.FileName) == ".pdf" && file.Length < 1048576 && submission.FileName != null && submission.Description != null && submission.AssignmentTask.Deadline > DateTime.Now)
+                if (System.IO.Path.GetExtension(file.FileName) == ".pdf" && file.Length < 1048576 && submission.FileName != null && submission.Description != null && submission.AssignmentTask.Deadline > submission.TimeSubmitted)
                 {
                     //25 50 >>>>> 37 80
                     byte[] whitelist = new byte[] { 37, 80 };
 
                     if (file != null)
                     {
-                        MemoryStream userFile = new MemoryStream();
-                        file.CopyTo(userFile);
-
                         using (var f = file.OpenReadStream())
                         {
                             /*int byte1 = f.ReadByte();
@@ -166,20 +164,24 @@ namespace WebApplication1.Controllers
                             }
                             //...other reading of bytes happening
                             f.Position = 0;
-
+                            MemoryStream userFile = new MemoryStream();
+                            file.CopyTo(userFile);
                             //uploading the file
                             //correctness
                             uniqueFilename = Guid.NewGuid() + Path.GetExtension(file.FileName);
                             submission.Path = uniqueFilename;
 
-                            //MemoryStream encryptedStream = Utility.Encryption.HybridEncrypt(userFile, user.PublicKey);
+                            //Using hybrid encryption method to get an encrypted stream of the file (Including encrypted key and iv)
+                            MemoryStream encryptedStream = Utility.Encryption.HybridEncrypt(userFile, user.PublicKey);
 
                             //MemoryStream clearFile = Utility.Encryption.HybridDecrypt(encryptedStream, user.PrivateKey);
 
+                            //Signing the file and storing a copy of the signature in the database
                             submission.Signature = Utility.Encryption.SignData(userFile, user.PrivateKey);
 
-                            byte[] toHash = userFile.ToArray();
-                            byte[] hash = Utility.Encryption.Hash(toHash);
+                            //Hashing the file (To scan for copied assignments)
+                            byte[] fileToHash = userFile.ToArray();
+                            byte[] hash = Utility.Encryption.Hash(fileToHash);
                             submission.Hash = Convert.ToBase64String(hash);
 
                             //string absolutePath1 = _host.WebRootPath + @"\pictures\" + uniqueFilename;
@@ -187,11 +189,15 @@ namespace WebApplication1.Controllers
                             string absolutePath = _host.ContentRootPath + @"\ValuableFiles\" + uniqueFilename;
                             try
                             {
-                                using (FileStream fsOut = new FileStream(absolutePath, FileMode.CreateNew, FileAccess.Write))
-                                {
-                                    // throw new Exception();
-                                    f.CopyTo(fsOut);
-                                }
+                                //https://stackoverflow.com/a/19455387
+                                System.IO.File.WriteAllBytes(absolutePath, encryptedStream.ToArray());
+
+                               // using (FileStream fsOut = new FileStream(absolutePath, FileMode.CreateNew, FileAccess.Write))
+                               // {
+                               //     // throw new Exception();
+                               //     //f.CopyTo(fsOut);
+                               //     f.CopyTo(fsOut);
+                               // }
                                 //   f.CopyTo(userFile); //this goes instead writing the file into a folder
                                 f.Close();
                                 //File upload successful add to database
@@ -201,7 +207,7 @@ namespace WebApplication1.Controllers
                             catch (Exception ex)
                             {
                                 //log
-                                _logger.LogError(ex, "Error happend while saving file");
+                                _logger.LogError(ex, "Error occured while saving file");
 
                                 return View("Error", new ErrorViewModel() { Message = "Error while saving the file. Try again later" });
                             }
@@ -226,7 +232,7 @@ namespace WebApplication1.Controllers
 
         [Authorize(Roles = "Student")]
         public IActionResult ViewUserSubmissions() {
-
+            //Gets a list of user submissions using their email
             var list = _taskService.GetUserSubmissions(User.Identity.Name);
 
             return View(list);
@@ -257,9 +263,10 @@ namespace WebApplication1.Controllers
 
             var comments = _taskService.GetSubmissionComments(id);
 
+            //Checks if there are multiple of the same hash
             bool assignmentCopied = _taskService.SubmissionCopied(userSubmission.Hash);
 
-
+        
             ViewBag.SubmissionComments = comments;
             ViewBag.Copied = assignmentCopied;
 
@@ -292,11 +299,13 @@ namespace WebApplication1.Controllers
         public IActionResult AddComment(CommentViewModel comment) {
             if (comment.Content != null)
             {
+                //Encoded in case of injection
                 comment.Content = HtmlEncoder.Default.Encode(comment.Content);
                 comment.Author = User.Identity.Name;
                 comment.Posted = DateTime.Now;
                 _taskService.AddComment(comment);
                 TempData["message"] = "Comment Added successfully";
+                //Setting encrypted id to redirect user to the task they commented on
                 string encryptedId = Utility.Encryption.SymmetricEncrypt(comment.Submission.Id.ToString());
                 return RedirectToAction("ViewSubmission", "AssignmentTask", new { eid = encryptedId });
 
@@ -327,17 +336,38 @@ namespace WebApplication1.Controllers
 
                 byte[] bytes = System.IO.File.ReadAllBytes(path);
 
-                MemoryStream memoryStream = new MemoryStream(bytes);
-
-                bool isAuthentic = Utility.Encryption.VerifyData(memoryStream, submissionOwner.PublicKey, submission.Signature);
-
-                if (isAuthentic)
+                MemoryStream encryptedStream = new MemoryStream(bytes);
+                MemoryStream clearFileMs = null;
+                try
                 {
-                    return (File(memoryStream, "application/octet-stream", submission.Path));
+                    clearFileMs = Utility.Encryption.HybridDecrypt(encryptedStream, submissionOwner.PrivateKey);
                 }
-                else
+                catch (Exception e) {
+                    TempData["error"] = "Something went wrong, probably tampered with the file format";
+                    _logger.LogError("File has been tampered with");
+                }
+
+                if (clearFileMs != null)
                 {
-                    TempData["error"] = "Submitted File is not authentic";
+                    //Authenticity check worked before implementing hybrid encryption/decryption. Maybe I am tampering with the file in a way where it breaks the structure of the key, IV and saved file
+                    //Check still works if tampered file is a user's previous file 
+                    bool isAuthentic = Utility.Encryption.VerifyData(clearFileMs, submissionOwner.PublicKey, submission.Signature);
+
+                    if (isAuthentic)
+                    {
+                        //Downloads file if file is authentic
+                        return (File(clearFileMs, "application/octet-stream", submission.Path));
+                    }
+                    else
+                    {
+                        TempData["error"] = "Submitted File is not authentic";
+                        _logger.LogError("File has been tampered with");
+                    }
+                }
+
+                else {
+                    _logger.LogError("File has probably been tampered with");
+                    TempData["error"] = "An error has occured";
                 }
 
             }

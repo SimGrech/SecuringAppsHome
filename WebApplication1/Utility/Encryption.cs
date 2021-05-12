@@ -225,6 +225,7 @@ namespace WebApplication1.Utility
         }
 
         //Hybrid Key Decryption
+        //Copied Method but added key and iv parameter to accomodate for hybrid decryption
         public static byte[] SymmetricDecrypt(byte[] cipherAsBytes, byte[] key, byte[] iv)
         {
             //0. declare the algorithm to use
@@ -338,7 +339,7 @@ namespace WebApplication1.Utility
             myAlg.FromXmlString(publicKey);
 
 
-            byte[] dataAsBytes = Encoding.UTF32.GetBytes(data);
+            byte[] dataAsBytes = Convert.FromBase64String(data);
 
             byte[] cipher = myAlg.Encrypt(dataAsBytes, RSAEncryptionPadding.Pkcs1);
 
@@ -354,7 +355,7 @@ namespace WebApplication1.Utility
 
             byte[] originalTextAsBytes = myAlg.Decrypt(cipherAsBytes, RSAEncryptionPadding.Pkcs1);
 
-            return Encoding.UTF32.GetString(originalTextAsBytes);
+            return Convert.ToBase64String(originalTextAsBytes);
         }
 
 
@@ -370,26 +371,30 @@ namespace WebApplication1.Utility
             myAlg.GenerateKey(); myAlg.GenerateIV();
             var key = myAlg.Key; var iv = myAlg.IV;
 
-            //2. Asymmetrically encrypt using the public key, the symm key and iv above
+            //2. Encrypting the clearFile using Symmetric Encryption
+            byte[] clearFileBytes = clearFile.ToArray();
+
+            byte[] encryptedBytes = SymmetricEncrypt(clearFileBytes, key, iv);
+
+            //3. Asymmetrically encrypt using the public key, the symm key and iv above
             string keyAsString = Convert.ToBase64String(key);
             string encryptedKeyAsString = AsymmetricEncrypt(keyAsString, publicKey);
 
             string ivAsString = Convert.ToBase64String(iv);
             string encryptedIvAsString = AsymmetricEncrypt(ivAsString, publicKey);
 
-            //3. Encrypting the clearFile using Symmetric Encryption
-            byte[] clearFileBytes = clearFile.ToArray();
-
-            byte[] encryptedBytes = SymmetricEncrypt(clearFileBytes, key, iv);
-
+            
             //4. store the above encryted data n one file
-            byte[] encrtypedKey = Convert.FromBase64String(encryptedKeyAsString);
+            //byte[] encryptedKey = new byte[25];
+            //byte[] encryptedIv = new byte[256];
+
+            byte[] encryptedKey = Convert.FromBase64String(encryptedKeyAsString);
             byte[] encryptedIv = Convert.FromBase64String(encryptedIvAsString);
 
             //byte[] encryptedBytes; //this the uploaded file content
 
             MemoryStream msOut = new MemoryStream();
-            msOut.Write(encrtypedKey, 0, encrtypedKey.Length);
+            msOut.Write(encryptedKey, 0, encryptedKey.Length);
             msOut.Write(encryptedIv, 0, encryptedIv.Length);
 
             //encryptedBytes  [234alsdjfalsdkfj;alskdfjalsdkjfalskdjflaskdjflaskdjflasdjflaksjdflaksdjflaksd;jflaskdjaskldjflsdkfj]
@@ -401,21 +406,33 @@ namespace WebApplication1.Utility
         }
 
         public static MemoryStream HybridDecrypt(MemoryStream encFile, string privateKey) {
-            var encryptedKey = new byte[sizeof(int)];
-            var encryptedIv = new byte[sizeof(int)];
+            //Using 128 bytes since encrypted key and IV length will result in 128
+            byte[] encryptedKey = new byte[128];
+            byte[] encryptedIv = new byte[128];
 
-            //Sets the encrypted key
-            encFile.Read(encryptedKey, 0, encryptedKey.Length);
-            var encryptedKeyLength = encryptedKey.Length;
+            //Retrieve the encrypted key and iv
+            //Reads 0-128
+            encFile.Read(encryptedKey, 0, 128);
+            //Reads 128-256
+            encFile.Read(encryptedIv, 0, 128);
 
-            encFile.Read(encryptedIv, 0, encryptedKeyLength);
+            //Decrypt keys and turn them to string to be passable to other methods
+            string decryptedKey = AsymmetricDecrypt(Convert.ToBase64String(encryptedKey), privateKey);
+            string decryptedIv = AsymmetricDecrypt(Convert.ToBase64String(encryptedIv), privateKey);
 
-            var decryptedKey = AsymmetricDecrypt(Convert.ToBase64String(encryptedKey), privateKey);
-            var decryptedIv = AsymmetricDecrypt(Convert.ToBase64String(encryptedIv), privateKey);
+            //Store Encrypted File
+            MemoryStream encryptedFileOnly = new MemoryStream();
+            encFile.CopyTo(encryptedFileOnly);
+            
+            //Return decryped bytes
+            byte[] File = SymmetricDecrypt(encryptedFileOnly.ToArray(), Convert.FromBase64String(decryptedKey), Convert.FromBase64String(decryptedIv));
 
-            throw new NotImplementedException();
+            MemoryStream clearFileMs = new MemoryStream(File);
+
+            return clearFileMs;
         }
 
+        //Used Ryan's method
         public static string SignData(MemoryStream data, string privateKey)
         {
             RSACryptoServiceProvider myAlg = new RSACryptoServiceProvider();
@@ -433,6 +450,7 @@ namespace WebApplication1.Utility
             return Convert.ToBase64String(signatureAsBytes);
         }
 
+        //Used Ryan's method
         public static bool VerifyData(MemoryStream data, string publicKey, string signature)
         {
             RSACryptoServiceProvider myAlg = new RSACryptoServiceProvider();
@@ -452,9 +470,7 @@ namespace WebApplication1.Utility
             return valid;
         }
 
-
     }
-
 
     public class AsymmetricKeys
     {
